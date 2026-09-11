@@ -13,13 +13,13 @@ Rectangle {
     // property color text: ""
     // property color prim: "#3dd1b0"
 
-    property string query: ""
+    // property string query: ""
 
     ScriptModel {
         id: filtered
         values: {
             const all = [...DesktopEntries.applications.values].filter(e => e.name).sort((a, b) => a.name.localeCompare(b.name));
-            const q = root.query.trim().toLowerCase();
+            const q = DropdownState.query.trim().toLowerCase();
             if (q === "")
                 return all;
             return all.filter(e => {
@@ -65,7 +65,7 @@ Rectangle {
                 focus: true
 
                 onTextChanged: {
-                    root.query = text;
+                    DropdownState.query = text;
                     list.currentIndex = 0;
                 }
 

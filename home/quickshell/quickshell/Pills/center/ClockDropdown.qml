@@ -22,7 +22,10 @@ PanelWindow {
     Shortcut {
         sequence: "Escape"
         enabled: DropdownState.expanded
-        onActivated: DropdownState.expanded = false
+        onActivated: {
+            DropdownState.expanded = false;
+            DropdownState.clearQuery();
+        }
     }
 
     // property color bg: ""
@@ -49,6 +52,7 @@ PanelWindow {
         anchors.fill: parent
         onClicked: {
             DropdownState.expanded = false;
+            DropdownState.clearQuery();
         }
     }
 
