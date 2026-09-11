@@ -20,7 +20,7 @@ ShellRoot {
     }
     ClockDropdown {}
     NotificationPopups {}
-
+    VolumeOsd {}
     PanelWindow {
         id: bar
         property int margin_top: 3
