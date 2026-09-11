@@ -1,0 +1,27 @@
+# Carbonfox theme for fish
+# Remapped from the TokyoNight Moon fish theme, role-for-role, to Carbonfox colors.
+# Carbonfox palette: https://github.com/EdenEast/nightfox.nvim
+# Note: Carbonfox has no warm colors -- its "yellow" slot is a teal (#08bdba),
+# and there is no orange, so fish_color_end uses a pink-red.
+# Syntax Highlighting Colors
+fish_color_normal f2f4f8
+fish_color_command 33b1ff
+fish_color_keyword be95ff
+fish_color_quote 08bdba
+fish_color_redirection f2f4f8
+fish_color_end f16da6
+fish_color_option be95ff
+fish_color_error ee5396
+fish_color_param c8a5ff
+fish_color_comment 7ad9a8
+fish_color_selection --background=2a2a2a
+fish_color_search_match --background=2a2a2a
+fish_color_operator 25be6a
+fish_color_escape be95ff
+fish_color_autosuggestion 7ad9a8
+# Completion Pager Colors
+fish_pager_color_progress 7ad9a8
+fish_pager_color_prefix 33b1ff
+fish_pager_color_completion f2f4f8
+fish_pager_color_description 7ad9a8
+fish_pager_color_selected_background --background=2a2a2a

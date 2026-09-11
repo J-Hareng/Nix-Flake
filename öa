@@ -1,0 +1,41 @@
+   nix-config
+ ├╴  home
+ │ ├╴  hyprland
+ │ │ ├╴  hypr
+ │ │ │ ├╴  config
+ │ │ │ │ ├╴  animations.lua
+ │ │ │ │ ├╴  keybindings.lua
+ │ │ │ │ ├╴  monitors.lua
+ │ │ │ │ ├╴  options.lua
+ │ │ │ │ └╴  roules.lua
+ │ │ │ ├╴  scripts
+ │ │ │ ├╴  hyprland-gui.lua
+ │ │ │ ├╴  hyprland.lua
+ │ │ │ └╴  hyprlock.conf
+ │ │ └╴  default.nix
+ │ ├╴  nvim
+ │ ├╴  quickshell
+ │ ├╴  terminal
+ │ ├╴  colors.css
+ │ ├╴  default.nix
+ │ ├╴  packages.nix
+ │ └╴  programm-languages.nix
+ ├╴  hosts
+ │ └╴  juga
+ │   ├╴  configuration.nix
+ │   ├╴  hardware-configuration.nix
+ │   └╴  sddm_wallpaper.jpg
+ ├╴  modules
+ ├╴  flake.lock
+ └╴  flake.nix
+
+
+
+
+
+
+
+
+
+
+

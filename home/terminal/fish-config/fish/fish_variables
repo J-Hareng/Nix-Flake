@@ -1,0 +1,37 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export EDITOR:nvim
+SETUVAR __fish_initialized:4300
+SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1evitallium/tokyonight\x2dfish
+SETUVAR _fisher_upgraded_to_4_4:\x1d
+SETUVAR _fisher_vitallium_2F_tokyonight_2D_fish_files:\x7e/\x2econfig/fish/themes/TokyoNight\x20Day\x2etheme\x1e\x7e/\x2econfig/fish/themes/TokyoNight\x20Moon\x2etheme\x1e\x7e/\x2econfig/fish/themes/TokyoNight\x20Night\x2etheme\x1e\x7e/\x2econfig/fish/themes/TokyoNight\x20Storm\x2etheme
+SETUVAR fish_color_autosuggestion:7ad9a8
+SETUVAR fish_color_cancel:\x1d
+SETUVAR fish_color_command:33b1ff
+SETUVAR fish_color_comment:7ad9a8
+SETUVAR fish_color_cwd:\x1d
+SETUVAR fish_color_cwd_root:\x1d
+SETUVAR fish_color_end:f16da6
+SETUVAR fish_color_error:ee5396
+SETUVAR fish_color_escape:be95ff
+SETUVAR fish_color_history_current:\x1d
+SETUVAR fish_color_host:\x1d
+SETUVAR fish_color_host_remote:\x1d
+SETUVAR fish_color_keyword:be95ff
+SETUVAR fish_color_normal:f2f4f8
+SETUVAR fish_color_operator:25be6a
+SETUVAR fish_color_option:be95ff
+SETUVAR fish_color_param:c8a5ff
+SETUVAR fish_color_quote:08bdba
+SETUVAR fish_color_redirection:f2f4f8
+SETUVAR fish_color_search_match:\x2d\x2dbackground\x3d2a2a2a
+SETUVAR fish_color_selection:\x2d\x2dbackground\x3d2a2a2a
+SETUVAR fish_color_status:\x1d
+SETUVAR fish_color_user:\x1d
+SETUVAR fish_color_valid_path:\x1d
+SETUVAR fish_pager_color_completion:f2f4f8
+SETUVAR fish_pager_color_description:7ad9a8
+SETUVAR fish_pager_color_prefix:33b1ff
+SETUVAR fish_pager_color_progress:7ad9a8
+SETUVAR fish_pager_color_selected_background:\x2d\x2dbackground\x3d2a2a2a

@@ -1,0 +1,45 @@
+# name: 'Ariadne'
+# preferred_background: 040e0d
+
+# --- Syntax highlighting ---
+fish_color_normal f5e2c5
+fish_color_command 3dd1b0 --bold
+fish_color_keyword ff6048
+fish_color_quote 7ad9a8
+fish_color_redirection 5fc8d4
+fish_color_end e89aa8
+fish_color_error ff6048 --bold
+fish_color_param f5e2c5
+fish_color_comment 5a4d3e --italics
+fish_color_operator f5cd5b
+fish_color_escape ffa478
+fish_color_option ffa478
+fish_color_autosuggestion 5a4d3e
+fish_color_cancel c4b09a
+fish_color_valid_path --underline
+
+# Selection / search (matches the Search highlight in the Neovim theme:
+# dark text on a yellow highlight, for maximum visibility)
+fish_color_selection f5e2c5 --bold --background=152a26
+fish_color_search_match 040e0d --background=f5cd5b
+
+# --- Prompt colors (used by fish's default prompt) ---
+fish_color_cwd f5cd5b --bold
+fish_color_cwd_root ff6048 --bold
+fish_color_user 7ad9a8
+fish_color_host 5fc8d4
+fish_color_host_remote f5cd5b --bold
+fish_color_status ff6048 --bold
+
+# --- Pager colors (tab-completion menu) ---
+# Selected row mirrors the Neovim Pmenu selection: aqua background,
+# dark text, bold - for a consistent "this is the active item" look.
+fish_pager_color_progress c4b09a
+fish_pager_color_background --background=040e0d
+fish_pager_color_prefix 3dd1b0 --bold --underline
+fish_pager_color_completion f5e2c5
+fish_pager_color_description 5a4d3e --italics
+fish_pager_color_selected_background --background=3dd1b0
+fish_pager_color_selected_prefix 040e0d --bold
+fish_pager_color_selected_completion 040e0d --bold
+fish_pager_color_selected_description 040e0d

@@ -1,0 +1,48 @@
+# Ariadne theme for Ghostty
+#
+# Install:
+#   1. mkdir -p ~/.config/ghostty/themes
+#   2. Save this file as: ~/.config/ghostty/themes/ariadne
+#      (no file extension)
+#   3. In your main config (~/.config/ghostty/config) add:
+#        theme = ariadne
+#   4. Reload Ghostty's config: ctrl+shift+, (or quit/reopen)
+#
+# Verify what actually loaded with:  ghostty +show-config
+
+# --- Basic colors ---
+background = #040e0d
+foreground = #f5e2c5
+
+# --- Cursor ---
+cursor-color = #f5e2c5
+cursor-text = #040e0d
+
+# --- Selection ---
+selection-background = #152a26
+selection-foreground = #f5e2c5
+
+# --- ANSI palette (0-15) ---
+# Mapped the same way as the terminal colors in the Neovim theme,
+# so :terminal inside nvim and Ghostty itself look identical.
+palette = 0=#0a1816
+palette = 1=#ff6048
+palette = 2=#7ad9a8
+palette = 3=#f5cd5b
+palette = 4=#5fc8d4
+palette = 5=#e89aa8
+palette = 6=#3dd1b0
+palette = 7=#c4b09a
+palette = 8=#5a4d3e
+palette = 9=#ff6048
+palette = 10=#7ad9a8
+palette = 11=#f5cd5b
+palette = 12=#5fc8d4
+palette = 13=#e89aa8
+palette = 14=#3dd1b0
+palette = 15=#f5e2c5
+
+# Ghostty auto-generates the extended 256-color palette (16-255)
+# from these 16 base colors by default, so tools that expect a
+# full 256-color terminal will still look coherent.
+# palette-generate = true

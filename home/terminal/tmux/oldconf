@@ -1,0 +1,24 @@
+
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+
+set -g prefix C-s
+set -g mouse on
+
+# Neovim compatibility settings
+set-option -sg escape-time 10  # Fix delay when pressing Escape in Neovim
+set-option -g focus-events on  # Enable focus events for autoread in Neovim
+
+bind-key h select-pane -L
+bind-key j select-pane -D
+bind-key k select-pane -U
+bind-key l select-pane -R
+
+set-option -g status-position top
+set -g @plugin "janoamaral/tokyo-night-tmux"
+
+set -g @tokyo-night-tmux_theme night # storm | day | default to 'night'
+set -g @tokyo-night-tmux_show_music 1
+set -g @tokyo-night-tmux_transparent 1  # 1 or 0
+
+run '~/.tmux/plugins/tpm/tpm'
