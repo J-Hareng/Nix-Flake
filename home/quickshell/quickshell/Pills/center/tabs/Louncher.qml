@@ -69,11 +69,19 @@ Rectangle {
                     list.currentIndex = 0;
                 }
 
+                Connections {
+                    target: DropdownState
+                    function onQueryChanged() {
+                        if (input.text !== DropdownState.query)
+                            input.text = DropdownState.query;
+                    }
+                }
+
                 Keys.onUpPressed: list.currentIndex = Math.max(0, list.currentIndex - 1)
                 Keys.onDownPressed: list.currentIndex = Math.min(filtered.values.length - 1, list.currentIndex + 1)
 
                 Keys.onEscapePressed: {
-                    text = "";
+                    DropdownState.clearQuery();
                     DropdownState.expanded = false;
                 }
                 Keys.onReturnPressed: {
