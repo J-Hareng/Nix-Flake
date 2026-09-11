@@ -27,13 +27,6 @@ hl.window_rule({
 	},
 })
 
--- pavucontrol
-hl.window_rule({
-	float = true,
-	match = { class = "^org.pulseaudio.pavucontrol$" },
-	size = { 510, 600 },
-	move = { "(monitor_w-512)", 35 },
-})
 
 -- satty
 hl.window_rule({
@@ -47,6 +40,7 @@ hl.window_rule({
 	float = true,
 	size = { 500, 750 },
 })
+
 -- gcolor3
 hl.window_rule({
 	name = "color",
@@ -55,20 +49,9 @@ hl.window_rule({
 	size = { 800, 330 },
 })
 
--- blueman-manager
-hl.window_rule({
-	name = "blueman-manager-Roule",
-	float = true,
-	match = { class = "^blueman-manager$" },
-	size = { 350, 600 },
-	move = { "(monitor_w-440)", 35 },
-	border_size = 1,
-	rounding = 3,
-})
-
 -- Workspace assignments
 local workspace_rules = {
-	{ class = "org.gnome.Nautilus", workspace = 1 },
+	-- { class = "org.gnome.Nautilus", workspace = 1 },
 	{ class = "discord", workspace = 5 },
 	{ class = "vesktop", workspace = 5 },
 	{ class = "Slack", workspace = 5 },
@@ -137,3 +120,7 @@ hl.window_rule({
 	no_blur = true,
 	opacity = 0.0,
 })
+-- hl.layer_rule({
+--     match = { namespace = "quickshell:volume-osd" },
+--     no_anim = true,
+-- })

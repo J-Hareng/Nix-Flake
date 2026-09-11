@@ -18,9 +18,9 @@ ShellRoot {
             DropdownState.toggle();
         }
     }
+    VolumeOsd {}
     ClockDropdown {}
     NotificationPopups {}
-
     PanelWindow {
         id: bar
         property int margin_top: 3
