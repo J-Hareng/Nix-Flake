@@ -7,7 +7,9 @@ import "../src/"
 PanelWindow {
     id: overlay
 
-    visible: hideTimer.running
+    property bool shown: false
+    visible: shown || closeAnimTimer.running
+
     color: "transparent"
     exclusionMode: ExclusionMode.Ignore
     WlrLayershell.layer: WlrLayer.Overlay
@@ -20,18 +22,32 @@ PanelWindow {
     }
     implicitHeight: 90
 
+    onShownChanged: {
+        if (!shown)
+            closeAnimTimer.restart();
+    }
+
     Timer {
         id: hideTimer
         interval: 1500
+        repeat: false
+        onTriggered: overlay.shown = false
+    }
+
+    Timer {
+        id: closeAnimTimer
+        interval: 200
         repeat: false
     }
 
     Connections {
         target: VolumeService
         function onVolumeChanged() {
+            overlay.shown = true;
             hideTimer.restart();
         }
         function onMutedChanged() {
+            overlay.shown = true;
             hideTimer.restart();
         }
     }
@@ -40,12 +56,36 @@ PanelWindow {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 40
-        width: 220
         height: 50
         radius: 16
         color: "#040e0d"
         border.color: "#1d3631"
         border.width: 1
+
+        width: overlay.shown ? 220 : 50
+        opacity: overlay.shown ? 1 : 0
+        scale: overlay.shown ? 1 : 0.85
+
+        transformOrigin: Item.Bottom
+
+        Behavior on width {
+            NumberAnimation {
+                duration: 180
+                easing.type: Easing.OutCubic
+            }
+        }
+        Behavior on opacity {
+            NumberAnimation {
+                duration: 180
+                easing.type: Easing.OutCubic
+            }
+        }
+        Behavior on scale {
+            NumberAnimation {
+                duration: 180
+                easing.type: Easing.OutCubic
+            }
+        }
 
         RowLayout {
             anchors.fill: parent
@@ -57,6 +97,7 @@ PanelWindow {
                 font.family: "Material Symbols Rounded"
                 font.pixelSize: 18
                 color: "#f5e2c5"
+                opacity: overlay.shown ? 1 : 0
             }
 
             Rectangle {
@@ -70,10 +111,6 @@ PanelWindow {
                     height: parent.height
                     radius: parent.radius
                     color: "#3dd1b0"
-
-                    Behavior on width {
-                        NumberAnimation { duration: 120 }
-                    }
                 }
             }
         }
