@@ -5,16 +5,13 @@
 
     lazygit
 
-
     lua5_1
-
 
     clang
     fzf
     ripgrep
     unzip
     fd
-  
 
     #treesitter
     tree-sitter 
