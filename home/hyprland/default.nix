@@ -5,7 +5,7 @@
       hyprland
       hyprlock
       hypridle
-  ]
+  ];
 
   xdg.configFile."hypr"={
       source = ./hypr;
