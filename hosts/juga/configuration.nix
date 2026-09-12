@@ -72,6 +72,7 @@ services.tlp.pd.enable = true;
     clean.extraArgs = "--keep 5 --keep-since 7d";
   };
 
+  security.pam.services.hyprlock = {};
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users."ju" = {

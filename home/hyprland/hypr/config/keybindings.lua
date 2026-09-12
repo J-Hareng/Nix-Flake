@@ -107,3 +107,6 @@ hl.bind(
 	hl.dsp.exec_cmd("~/.config/hypr/scripts/tablet-mode.sh off"),
 	{ locked = true }
 )
+
+hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("loginctl lock-session"), { locked = true })
+
