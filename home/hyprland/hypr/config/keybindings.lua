@@ -108,5 +108,5 @@ hl.bind(
 	{ locked = true }
 )
 
-hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("hyprlock & sleep 1; systemctl suspend"), { locked = true })
+hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("hyprlock"), { locked = true })
 

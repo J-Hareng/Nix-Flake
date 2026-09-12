@@ -74,7 +74,6 @@ services.tlp.pd.enable = true;
     shell = pkgs.fish;
   };
 
- services.logind.settings.Login.HandleLidSwitc = "ignore";
 
   programs.fish.enable = true;
 
