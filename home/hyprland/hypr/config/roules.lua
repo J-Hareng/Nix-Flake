@@ -36,6 +36,12 @@ hl.window_rule({
 })
 
 hl.window_rule({
+	match = { class = "waypaper" },
+	float = true,
+	size = { 500, 750 },
+})
+
+hl.window_rule({
 	match = { class = "org.gnome.Calculator" },
 	float = true,
 	size = { 500, 750 },

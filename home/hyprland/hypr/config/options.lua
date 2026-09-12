@@ -63,7 +63,6 @@ hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 
 hl.on("hyprland.start", function()
 	hl.exec_cmd("uwsm finalize")
-	hl.exec_cmd("hypridle")
 	hl.exec_cmd("awww-daemon -q & sunsetr & qs &")
 
 	hl.exec_cmd("xwaylandvideobridge")
