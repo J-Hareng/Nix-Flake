@@ -83,8 +83,11 @@ services.tlp.pd.enable = true;
   };
 
   programs.fish.enable = true;
+
   programs.hyprland.enable = true;
-  #
+  programs.hyprland.withUWSM = true;
+ 
+
   nixpkgs.config.allowUnfree = true;
 
   system.stateVersion = "26.05"; # Did you read the comment?

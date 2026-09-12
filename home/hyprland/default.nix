@@ -14,9 +14,9 @@
           lock_cmd = "pidof hyprlock || ${pkgs.hyprlock}/bin/hyprlock";
           unlock_cmd = "pkill hyprlock";
           before_sleep_cmd = "loginctl lock-session";
-          after_sleep_cmd = "hyprctl dispatch dpms on";
+          after_sleep_cmd = "hyprctl dispatch 'hl.dsp.dpms({ action = \"on\" })'";
         };
       };
-};
+  };
 }
 
