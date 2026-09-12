@@ -63,13 +63,12 @@ hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 
 hl.on("hyprland.start", function()
 	hl.exec_cmd("uwsm finalize")
+	hl.exec_cmd("hypridle")
 	hl.exec_cmd("awww-daemon -q & sunsetr & qs &")
-	-- hl.exec_cmd(
-	-- 	"/usr/bin/slack --disable-gpu-compositing --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime --enable-features=WebRTCPipeWireCapturer --enable-features=WaylandWindowDecorations --disable-features=WaylandFractionalScaleV1 -s %U --startup &"
-	-- )
+
 	hl.exec_cmd("xwaylandvideobridge")
+
 	-- hl.exec_cmd("/home/ju/.config/hypr/scripts/auto-rotate.sh")
-	-- hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &")
 	hl.exec_cmd("wl-paste --type text --watch cliphist store &")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store &")
 end)

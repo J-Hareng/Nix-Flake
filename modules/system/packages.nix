@@ -10,7 +10,8 @@
     (pkgs.btop.override { rocmSupport = true; })
 
     wl-clipboard
-    hyprland
+
+
     kitty 
 
     libnotify   
