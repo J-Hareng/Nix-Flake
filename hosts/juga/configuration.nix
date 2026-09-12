@@ -1,22 +1,12 @@
 {nixpkgs, config, pkgs, environment, ... }:
 
-
 {
   imports =
     [ 
       ./hardware-configuration.nix
     ];
-
  
   nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-
-
-
 
   services.upower.enable = true;
   powerManagement.enable = true;
@@ -82,6 +72,8 @@ services.tlp.pd.enable = true;
     packages = with pkgs; [];
     shell = pkgs.fish;
   };
+
+  services.logind.lidSwitch = "ignore";
 
   programs.fish.enable = true;
 
