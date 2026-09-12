@@ -29,6 +29,7 @@
       modules = [
         ./hosts/juga/configuration.nix
         ./modules/system/packages.nix
+        ./modules/system/hyprland.nix
         ./modules/system/bluetooth.nix
         ./modules/system/networking.nix
         ./modules/system/boot.nix
