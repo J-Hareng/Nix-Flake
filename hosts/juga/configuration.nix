@@ -64,6 +64,7 @@ services.tlp.pd.enable = true;
 
   security.pam.services.hyprlock = {};
 
+  
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users."ju" = {
     isNormalUser = true;
@@ -73,7 +74,7 @@ services.tlp.pd.enable = true;
     shell = pkgs.fish;
   };
 
-  services.logind.lidSwitch = "ignore";
+ services.logind.settings.Login.HandleLidSwitc = "ignore";
 
   programs.fish.enable = true;
 
