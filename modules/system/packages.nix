@@ -17,7 +17,15 @@
     libnotify   
 
     python3
-    rustup
+  
+  # rustup
+    cargo
+    rustc
+    rustfmt
+    clippy
+    rust-analyzer
+
+
     gcc
 
     bluez
