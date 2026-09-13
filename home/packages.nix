@@ -1,43 +1,46 @@
-{pkgs, inputs, ...}:
+{ pkgs, inputs, ... }:
 
 {
-  home.packages = with pkgs; [
-    #TESTER THEMP DUMPER
-    gnome-themes-extra
-    amdgpu_top
+  home.packages =
+    with pkgs;
+    [
+      #TESTER THEMP DUMPER
+      gnome-themes-extra
+      amdgpu_top
 
-    vscode
+      vscode
 
-    lsd 
+      lsd
 
-    thunderbird
-    nautilus
+      thunderbird
+      nautilus
 
-    brightnessctl
-    
-    steam
-    vesktop
+      brightnessctl
 
-    material-symbols
+      steam
+      vesktop
 
-    rofi
-    fastfetch
+      material-symbols
 
-    krita
-    gimp
-    discord
-    
-    firefox
+      rofi
+      fastfetch
 
-    libreoffice
+      krita
+      gimp
+      discord
 
-    cbonsai
-    nwg-look
+      firefox
 
-    waypaper
-    awww
-  ] ++ [
-    inputs.hyprmod.packages.${pkgs.stdenv.hostPlatform.system}.default
-  ];
+      libreoffice
+
+      tidal
+      cbonsai
+      nwg-look
+
+      waypaper
+      awww
+    ]
+    ++ [
+      inputs.hyprmod.packages.${pkgs.stdenv.hostPlatform.system}.default
+    ];
 }
-
