@@ -1,39 +1,52 @@
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
 
 {
-  environment.systemPackages = with pkgs; [
-    git
-    wget
-    htop
-    vim
-  
-    (pkgs.btop.override { rocmSupport = true; })
+  environment.systemPackages =
+    with pkgs;
+    [
+      git
+      wget
+      htop
+      vim
 
-    wl-clipboard
+      (pkgs.btop.override { rocmSupport = true; })
 
+      wl-clipboard
 
-    kitty 
+      kitty
 
-    libnotify   
+      libnotify
 
-    python3
-  
-  # rustup
-    cargo
-    rustc
-    rustfmt
-    clippy
-    rust-analyzer
+      python3
 
+      # rustup
+      cargo
+      rustc
+      rustfmt
+      clippy
+      rust-analyzer
 
-    gcc
+      gcc
 
-    bluez
-    bluetui
-    
-    nh
-  ] ++ [
-    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-    inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.default
-  ];
+      bluez
+      bluetui
+
+      nh
+    ]
+    ++ [
+      inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+      inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.default
+    ];
+
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "tidal"
+    ];
+
 }

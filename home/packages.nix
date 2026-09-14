@@ -33,7 +33,6 @@
 
       libreoffice
 
-      tidal
       cbonsai
       nwg-look
 
