@@ -50,5 +50,5 @@
     builtins.elem (lib.getName pkg) [
       "tidal"
     ];
-
+  nixpkgs.config.allowUnsupportedSystem = true;
 }
