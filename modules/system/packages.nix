@@ -36,6 +36,8 @@
       bluez
       bluetui
 
+      tidal
+
       nh
     ]
     ++ [
