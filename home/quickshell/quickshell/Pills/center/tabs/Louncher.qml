@@ -9,12 +9,6 @@ Rectangle {
     Layout.fillHeight: true
     color: "transparent"
 
-    // property color bg: ""
-    // property color text: ""
-    // property color prim: "#3dd1b0"
-
-    // property string query: ""
-
     ScriptModel {
         id: filtered
         values: {
@@ -40,7 +34,7 @@ Rectangle {
             height: 34
             radius: 10
             color: "#0c1c1a"
-            border.color: input.activeFocus ? root.prim : "transparent"
+            border.color: input.activeFocus ? "#1d3631" : "transparent"
             border.width: 1
 
             Text {

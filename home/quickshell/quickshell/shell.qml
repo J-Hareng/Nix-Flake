@@ -19,13 +19,13 @@ ShellRoot {
         }
     }
     VolumeOsd {
-        screen: Hyprland.focusedMonitor
+        screen: Quickshell.screens.find(s => s.name === Hyprland.focusedMonitor?.name)
     }
     ClockDropdown {
-        screen: Hyprland.focusedMonitor
+        screen: Quickshell.screens.find(s => s.name === Hyprland.focusedMonitor?.name)
     }
     NotificationPopups {
-        screen: Hyprland.focusedMonitor
+        screen: Quickshell.screens.find(s => s.name === Hyprland.focusedMonitor?.name)
     }
 
     Poller {
