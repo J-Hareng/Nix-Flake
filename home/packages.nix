@@ -8,8 +8,15 @@
       gnome-themes-extra
       amdgpu_top
 
+      #Screenshots
+      grim
+      slurp
+      satty
+      hyprpicker
+
       vscode
 
+      procps
       lsd
 
       thunderbird

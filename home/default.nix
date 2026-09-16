@@ -1,8 +1,9 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
     ./packages.nix
+    ./screenshots.nix
     ./programm-languages.nix
     ./terminal/cli-config.nix
 

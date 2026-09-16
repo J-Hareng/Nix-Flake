@@ -85,16 +85,17 @@ hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tru
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
 -- ── Screenshots ───────────────────────────────────────────────
--- Slurp appearance env (set before grimblast calls it)
-hl.env("SLURP_ARGS", "-b 24273AAA -c f5a97fFF -d -B 24273AAA")
 
 hl.unbind("SUPER + S")
 hl.unbind("SUPER + SHIFT + S")
 hl.unbind("SUPER + P")
 
--- P is now power-profile (rebind after unbind above)
-hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("bash ~/.config/hypr/scripts/power-profile.sh"))
-hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd('GRIMBLAST_EDITOR="satty --filename" grimblast edit area'))
+hl.bind(
+	"SUPER + SHIFT + S",
+	hl.dsp.exec_cmd([[
+      wayfreeze --hide-cursor --after-freeze-cmd 'grim -g "$(slurp -b "#00000000" -c "#7ad9a8FF" -w 2)" - | satty --filename - --copy-command wl-copy --early-exit; pkill -x wayfreeze' --after-freeze-timeout 100
+    ]])
+)
 
 -- ── Tablet mode (Lenovo Yoga lid switch) ─────────────────────
 hl.bind(
@@ -109,4 +110,3 @@ hl.bind(
 )
 
 hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("hyprlock"), { locked = true })
-
