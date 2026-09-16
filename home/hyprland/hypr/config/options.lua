@@ -3,12 +3,12 @@ hl.config({
 		border_size = 1,
 		resize_on_border = true,
 		gaps_out = 5,
-    -- gaps_out_top = 0,
+		-- gaps_out_top = 0,
 		gaps_in = 3,
-        col = {
-            active_border = "0xfff5e2c5",
-            inactive_border = "0xff1d3631",
-        },
+		col = {
+			active_border = "0xfff5e2c5",
+			inactive_border = "0xff1d3631",
+		},
 	},
 
 	decoration = {
@@ -39,8 +39,6 @@ hl.env("AMD_DEBUG", "nodcc")
 hl.env("XCURSOR_SIZE", 24)
 hl.env("HYPRCURSOR_SIZE", 24)
 
-
-
 --tookit backend.
 hl.env("GDK_BACKEND", "wayland,x11,*")
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")
@@ -60,6 +58,8 @@ hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
 -- config
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
+
+hl.env("QS_ICON_THEME", "Adwaita")
 
 hl.on("hyprland.start", function()
 	hl.exec_cmd("uwsm finalize")

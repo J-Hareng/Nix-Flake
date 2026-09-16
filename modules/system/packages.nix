@@ -37,7 +37,10 @@
       bluetui
 
       tidal
-      adwaita-icon-theme
+
+      tela-icon-theme
+      papirus-icon-theme
+
       nh
     ]
     ++ [
