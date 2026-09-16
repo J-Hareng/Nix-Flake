@@ -37,7 +37,7 @@
       bluetui
 
       tidal
-
+      adwaita-icon-theme
       nh
     ]
     ++ [
