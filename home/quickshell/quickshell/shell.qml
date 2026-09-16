@@ -1,6 +1,7 @@
 //@ pragma UseQApplication
 import Quickshell
 import Quickshell.Io
+import Quickshell.Hyprland
 import QtQuick
 import QtQuick.Layouts
 import "./Pills/hypr/"
@@ -10,7 +11,6 @@ import "./Pills/"
 import "./src/"
 
 ShellRoot {
-
     IpcHandler {
         target: "dropdown"
         function toggle(): void {
@@ -18,55 +18,70 @@ ShellRoot {
             DropdownState.toggle();
         }
     }
-    VolumeOsd {}
-    ClockDropdown {}
-    NotificationPopups {}
-    PanelWindow {
-        id: bar
-        property int margin_top: 3
-        property int barHight: 20
-        anchors {
-            top: true
-            left: true
-            right: true
-        }
+    VolumeOsd {
+        screen: Hyprland.focusedMonitor
+    }
+    ClockDropdown {
+        screen: Hyprland.focusedMonitor
+    }
+    NotificationPopups {
+        screen: Hyprland.focusedMonitor
+    }
 
-        margins.top: margin_top
-        implicitHeight: barHight + margin_top
-        color: "transparent"
+    Poller {
+        id: clock
+        command: "date +%H:%M"
+        interval: 60000
+    }
+    Variants {
+        model: Quickshell.screens
 
-        Poller {
-            id: clock
-            command: "date +%H:%M"
-            interval: 60000
-        }
-        RowLayout {
-            id: row_left
-            anchors.left: parent.left
-            anchors.verticalCenter: parent.verticalCenter
-            anchors.leftMargin: 5
-            spacing: 8
-            HyprlandPill {
-                parentHeight: bar.height
+        PanelWindow {
+            id: bar
+
+            property var modelData
+            screen: modelData
+            property int margin_top: 3
+            property int barHight: 20
+            anchors {
+                top: true
+                left: true
+                right: true
             }
-        }
-        RowLayout {
-            id: row_center
-            anchors.centerIn: parent
-            CenterPill {
-                parentHeight: bar.height
-            }
-        }
 
-        RowLayout {
-            id: row_right
-            anchors.right: parent.right
-            anchors.verticalCenter: parent.verticalCenter
-            anchors.rightMargin: 5
-            spacing: 8
-            RightPill {
-                parentWindow: bar
-                parentHeight: bar.height
+            margins.top: margin_top
+            implicitHeight: barHight + margin_top
+            color: "transparent"
+
+            RowLayout {
+                id: row_left
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.leftMargin: 5
+                spacing: 8
+                HyprlandPill {
+                    parentHeight: bar.height
+                    screenName: bar.screen.name
+                }
+            }
+            RowLayout {
+                id: row_center
+                anchors.centerIn: parent
+                CenterPill {
+                    parentHeight: bar.height
+                }
+            }
+
+            RowLayout {
+                id: row_right
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.rightMargin: 5
+                spacing: 8
+                RightPill {
+                    parentWindow: bar
+                    parentHeight: bar.height
+                }
             }
         }
     }

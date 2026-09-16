@@ -5,6 +5,8 @@ import Quickshell.Hyprland
 Rectangle {
     id: root
 
+    property string screenName: ""
+
     property int parentHeight: 15
 
     implicitWidth: row.implicitWidth + 22
@@ -25,6 +27,7 @@ Rectangle {
                 workspace: ws
                 ws_index: index + 1
                 isActive: Hyprland.focusedWorkspace?.id === (index + 1)
+                screenName: root.screenName
 
                 parentHeight: root.parentHeight
             }
