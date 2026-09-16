@@ -6,8 +6,8 @@
 
 hl.monitor({
 	output = "eDP-1",
-	-- mode = "2880x1800@60",
-	mode = "2880x1800@120",
+	mode = "2880x1800@60",
+	-- mode = "2880x1800@120",
 	position = "2780x660",
 	scale = 1.8,
 })
@@ -26,6 +26,5 @@ hl.monitor({
 	mode = "2560x1440@60.00Hz",
 	position = "220x280",
 	scale = 1,
-
 })
 --

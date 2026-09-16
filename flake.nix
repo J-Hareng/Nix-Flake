@@ -36,14 +36,8 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/juga/configuration.nix
-          ./modules/system/packages.nix
-          ./modules/system/hyprland.nix
-          ./modules/system/bluetooth.nix
-          ./modules/system/networking.nix
-          ./modules/system/ai.nix
-          ./modules/system/boot.nix
-          ./modules/system/sddm.nix
-          ./modules/system/fonts.nix
+
+          ./modules/modules.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
