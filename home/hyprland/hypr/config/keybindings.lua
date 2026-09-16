@@ -1,7 +1,7 @@
 local terminal = "ghostty"
 local fileManager = "nautilus"
-local menu = "rofi -show drun"
-local browser = "zen-browser"
+local menu = "qs ipc call dropdown toggle"
+local browser = "zen"
 local mainMod = "SUPER"
 
 -- ── App / Session binds ──────────────────────────────────────
@@ -14,8 +14,7 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + D", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 
-hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("qs ipc call dropdown toggle"))
--- hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + ALT + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + I", hl.dsp.exec_cmd(browser))
 
