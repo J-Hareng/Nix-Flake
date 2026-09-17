@@ -23,5 +23,6 @@
 
     ./system/fonts.nix
 
+    ./system/samba.nix
   ];
 }

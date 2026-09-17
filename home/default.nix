@@ -6,15 +6,12 @@
     ./screenshots.nix
     ./programm-languages.nix
     ./terminal/cli-config.nix
-
+    ./qt/qt.nix
     ./nvim/nvim.nix
+    ./samba.nix
     ./hyprland/default.nix
     ./quickshell/quickshell.nix
   ];
-  qt = {
-    enable = true;
-    platformTheme.name = "gtk3";
-  };
 
   home.username = "ju";
   home.homeDirectory = "/home/ju";
