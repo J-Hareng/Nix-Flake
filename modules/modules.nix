@@ -17,7 +17,7 @@
     # System
     ./system/boot.nix
 
-    ./system/networking.nix
+    ./system/networking/networking.nix
     ./system/bluetooth.nix
     ./system/powermanagement.nix
 

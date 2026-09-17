@@ -1,0 +1,15 @@
+sudo install -m 600 -o root -g root /dev/null /var/lib/iwd/eduroam.8021x
+sudo nvim /var/lib/iwd/eduroam.8021x
+
+and paste
+[Security]
+EAP-Method=TTLS
+EAP-Identity=anonymous@h-ka.de
+EAP-TTLS-CACert=/etc/iwd/eduroam-hka-ca.pem
+EAP-TTLS-ServerDomainMask=*.h-ka.de
+EAP-TTLS-Phase2-Method=Tunneled-PAP
+EAP-TTLS-Phase2-Identity=YOUR_RZ_KUERZEL@h-ka.de
+EAP-TTLS-Phase2-Password=YOUR_RZ_PASSWORD
+
+[Settings]
+AutoConnect=true
