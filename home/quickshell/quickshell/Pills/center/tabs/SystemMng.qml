@@ -98,7 +98,7 @@ RowLayout {
 
             onClicked: {
                 if (armed) {
-                    onClicked: Quickshell.execDetached(["hyprctl", "dispatch", "exit"]);       // logout
+                    onClicked: Quickshell.execDetached(["uwsm", "stop"]);       // logout
                 } else {
                     armed = true;
                     confirmTimer.restart();

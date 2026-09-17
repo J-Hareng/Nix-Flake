@@ -38,6 +38,8 @@
 
       tidal
 
+      lxqt.lxqt-policykit
+
       tela-icon-theme
       papirus-icon-theme
 

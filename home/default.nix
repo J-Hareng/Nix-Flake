@@ -8,7 +8,6 @@
     ./terminal/cli-config.nix
     ./qt/qt.nix
     ./nvim/nvim.nix
-    ./samba.nix
     ./hyprland/default.nix
     ./quickshell/quickshell.nix
   ];

@@ -1,8 +1,6 @@
 {
-  nixpkgs,
-  config,
   pkgs,
-  environment,
+  lib,
   ...
 }:
 
@@ -16,7 +14,11 @@
     "flakes"
   ];
 
-  services.gvfs.enable = true;
+  services.gvfs = {
+    enable = true;
+    package = lib.mkForce pkgs.gnome.gvfs;
+  };
+  services.udisks2.enable = true;
 
   time.timeZone = "Europe/Berlin";
 
