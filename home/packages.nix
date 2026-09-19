@@ -12,39 +12,37 @@
       grim
       slurp
       satty
-      hyprpicker
 
-      vscode
-
+      waypaper
+      awww
       procps
-      lsd
+
+      nwg-look
 
       thunderbird
       nautilus
 
-      brightnessctl
-
       steam
       vesktop
+      discord
+      slack
 
-      material-symbols
+      vscode
 
       rofi
-      fastfetch
 
-      krita
       gimp
-      discord
 
       firefox
 
       libreoffice
 
+      fastfetch
+      brightnessctl
+      lsd
       cbonsai
-      nwg-look
 
-      waypaper
-      awww
+      material-symbols
     ]
     ++ [
       inputs.hyprmod.packages.${pkgs.stdenv.hostPlatform.system}.default
