@@ -34,7 +34,7 @@
       gimp
 
       firefox
-
+      speedtest-cli
       libreoffice
 
       fastfetch

@@ -7,10 +7,10 @@
     ./system/packages.nix
 
     # System programs
-    ./system/ai.nix
+    # ./system/ai.nix
     ./system/hyprland.nix
     ./system/sddm.nix
-
+    ./system/password_manager.nix
     # Hardware Thingis
     ./hardware/magic-mouse.nix
 

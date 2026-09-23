@@ -18,6 +18,8 @@ hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + ALT + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + I", hl.dsp.exec_cmd(browser))
 
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("1password --quick-access"))
+
 -- ── Focus movement ───────────────────────────────────────────
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "l" }))
 hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "r" }))
