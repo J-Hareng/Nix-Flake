@@ -66,7 +66,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("awww-daemon -q & sunsetr & qs &")
 
 	hl.exec_cmd("xwaylandvideobridge")
-	hl.exec_cmd("1password --ozone-platform=x11 --silent")
+	hl.exec_cmd("1password --silent")
 	-- hl.exec_cmd("/home/ju/.config/hypr/scripts/auto-rotate.sh")
 	hl.exec_cmd("wl-paste --type text --watch cliphist store &")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store &")

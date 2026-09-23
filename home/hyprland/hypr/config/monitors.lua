@@ -14,17 +14,27 @@ hl.monitor({
 
 hl.monitor({
 	output = "desc:Iiyama North America PL2792Q 1152101203578",
-	mode = "2560x1440@60",
-	position = "-1220x-540",
+	disabled = false,
+	mode = "2560x1440@59.95Hz",
+	position = "-220x-20",
+	scale = 1,
 	transform = 1,
-	scale = 1.0,
-	-- cm = "auto",
+	cm = "srgb",
 })
 
 hl.monitor({
 	output = "desc:Acer Technologies RX321QU 5135001013900",
-	mode = "2560x1440@60.00Hz",
-	position = "220x280",
+	disabled = false,
+	mode = "2560x1440@170.00Hz",
+	position = "1220x660",
 	scale = 1,
+	cm = "hdr",
+	sdrbrightness = 0.6,
+	sdr_min_luminance = 0.13,
+	sdr_max_luminance = 476,
+	min_luminance = 0.13,
+	max_luminance = 572,
+	max_avg_luminance = 434,
+	bitdepth = 10,
 })
 --
