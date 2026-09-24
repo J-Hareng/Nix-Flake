@@ -42,6 +42,7 @@
       lsd
       cbonsai
 
+      xournalpp
       material-symbols
     ]
     ++ [
