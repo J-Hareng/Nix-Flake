@@ -24,6 +24,8 @@
 
       python3
 
+      jdk21
+      android-studio-tools
       # rustup
       cargo
       rustc

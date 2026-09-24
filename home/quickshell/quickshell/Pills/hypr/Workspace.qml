@@ -18,7 +18,7 @@ Rectangle {
     // Does this workspace live on the monitor this bar belongs to?
     property bool isOnThisScreen: workspace != null && workspace.monitor !== null && workspace.monitor.name === root.screenName
     // Workspace is the one currently shown on this bar's monitor.
-    property bool isOpenButNotActive: workspace != null && workspace.monitor !== null && workspace.monitor.name === root.screenName && workspace.monitor.activeWorkspace !== null && workspace.monitor.activeWorkspace.id === workspace.id
+    property bool isOpenButNotActive: workspace !== null && workspace.monitor !== null && workspace.monitor.name === root.screenName && workspace.monitor.activeWorkspace !== null && workspace.monitor.activeWorkspace.id === workspace.id
 
     property color textColor: "#f5e2c5"
     property color backColor: "#040e0d"
