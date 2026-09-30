@@ -40,10 +40,15 @@
       fastfetch
       brightnessctl
       lsd
-      cbonsai
+
+      element-desktop
 
       xournalpp
       material-symbols
+
+      # TUI goofing around
+      chess-tui
+      cbonsai
     ]
     ++ [
       inputs.hyprmod.packages.${pkgs.stdenv.hostPlatform.system}.default

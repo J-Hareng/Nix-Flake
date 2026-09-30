@@ -20,6 +20,12 @@
     efiSupport = true;
     device = "nodev";
     theme = inputs.nixos-grub-themes.packages.${pkgs.system}.big-sur;
+
+    extraEntries = ''
+      menuentry "UEFI Firmware Settings" {
+        fwsetup
+      }
+    '';
   };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;

@@ -22,7 +22,9 @@
   services.resolved.enable = true;
 
   networking.firewall.enable = true;
-  # networking.firewall.allowedTCPPorts = [ 22 ];
+  networking.firewall.allowedTCPPorts = [
+    1420
+  ]; # 1420 Tauri
   # networking.firewall.allowedUDPPorts = [ ... ];
 
   # Enable the OpenSSH daemon.
