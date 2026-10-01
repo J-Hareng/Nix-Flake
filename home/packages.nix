@@ -49,6 +49,7 @@
       # TUI goofing around
       chess-tui
       cbonsai
+      wiremix
     ]
     ++ [
       inputs.hyprmod.packages.${pkgs.stdenv.hostPlatform.system}.default

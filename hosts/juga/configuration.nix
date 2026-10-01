@@ -83,5 +83,5 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  system.stateVersion = "26.05"; # Did you read the comment?
+  stdenv.hostPlatform.system.stateVersion = "26.05"; # Did you read the comment?
 }
