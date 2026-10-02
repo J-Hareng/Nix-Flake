@@ -38,6 +38,7 @@
           ./hosts/juga/configuration.nix
 
           ./modules/modules.nix
+
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

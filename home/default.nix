@@ -15,7 +15,6 @@
   home.username = "ju";
   home.homeDirectory = "/home/ju";
   home.stateVersion = "24.11";
-
   services.udiskie = {
     enable = true;
     settings = {

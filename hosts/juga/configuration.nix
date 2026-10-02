@@ -76,6 +76,8 @@
     icu
   ];
 
+  environment.variables.EDITOR = "nvim";
+
   programs.fish.enable = true;
 
   programs.hyprland.enable = true;
@@ -83,5 +85,5 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  stdenv.hostPlatform.system.stateVersion = "26.05"; # Did you read the comment?
+  system.stateVersion = "26.05";
 }
