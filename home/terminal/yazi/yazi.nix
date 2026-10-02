@@ -3,6 +3,9 @@
 
   home.packages = [ pkgs.yazi ];
 
-  # xdg.configFile."".source = ./starship.toml;
+  xdg.configFile."yazi" = {
+    source = ./yazi;
+    recursive = true;
+  };
 
 }
