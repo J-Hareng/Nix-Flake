@@ -38,13 +38,14 @@
       bluez
       bluetui
 
-      tidal
+      # tidal
 
       lxqt.lxqt-policykit
 
       tela-icon-theme
       papirus-icon-theme
-
+      sshfs
+      trayscale
       nh
     ]
     ++ [
@@ -52,10 +53,10 @@
       inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 
-  nixpkgs.config.allowUnfreePredicate =
-    pkg:
-    builtins.elem (lib.getName pkg) [
-      "tidal"
-    ];
-  nixpkgs.config.allowUnsupportedSystem = true;
+  # nixpkgs.config.allowUnfreePredicate =
+  #   pkg:
+  #   builtins.elem (lib.getName pkg) [
+  #     "tidal"
+  #   ];
+  # nixpkgs.config.allowUnsupportedSystem = true;
 }

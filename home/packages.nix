@@ -19,6 +19,7 @@
 
       nwg-look
 
+      mailspring
       thunderbird
       nautilus
 
@@ -45,6 +46,9 @@
 
       xournalpp
       material-symbols
+
+      beeper
+      beeper-bridge-manager
 
       # TUI goofing around
       chess-tui

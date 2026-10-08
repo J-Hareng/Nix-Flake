@@ -27,7 +27,6 @@ hl.window_rule({
 	},
 })
 
-
 -- satty
 hl.window_rule({
 	match = { class = "com.gabm.satty" },
@@ -45,6 +44,13 @@ hl.window_rule({
 	match = { class = "org.gnome.Calculator" },
 	float = true,
 	size = { 500, 750 },
+})
+
+hl.window_rule({
+	match = { class = "Beeper" },
+	float = true,
+	size = { 800, 950 },
+	move = "monitor_w-805 34",
 })
 
 -- gcolor3
@@ -105,14 +111,14 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    name = "quickshell-wifi-popup",
-    match = { class = "quickshell.wifipopup" },
-    float = true,
-    size = "750 550",
-    move = "monitor_w-760 34",
+	name = "quickshell-wifi-popup",
+	match = { class = "quickshell.wifipopup" },
+	float = true,
+	size = "750 550",
+	move = "monitor_w-760 34",
 
-	  opacity = 0.8,
-    rounding = 12,
+	opacity = 0.8,
+	rounding = 12,
 })
 
 hl.window_rule({
