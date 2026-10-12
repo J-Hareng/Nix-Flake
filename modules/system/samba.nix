@@ -14,7 +14,7 @@
   };
 
   fileSystems."/mnt/share" = {
-    device = "//Bubenserver/bubsmb";
+    device = "//100.109.40.104/bubsmb";
     fsType = "cifs";
     options =
       let

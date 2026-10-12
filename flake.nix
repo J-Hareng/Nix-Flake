@@ -19,6 +19,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
 
     };
+    # boltwarden.url = "github:vleeuwenmenno/boltwarden";
+
     nixos-grub-themes.url = "github:jeslie0/nixos-grub-themes";
   };
 

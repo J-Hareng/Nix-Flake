@@ -41,6 +41,12 @@ hl.window_rule({
 })
 
 hl.window_rule({
+	match = { class = "bitwarden" },
+	float = true,
+	size = { 600, 400 },
+})
+
+hl.window_rule({
 	match = { class = "org.gnome.Calculator" },
 	float = true,
 	size = { 500, 750 },

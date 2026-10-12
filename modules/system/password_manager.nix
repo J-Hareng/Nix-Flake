@@ -1,19 +1,30 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
-    _1password-gui
+    bitwarden-desktop
+    gnome-keyring
+    libfido2
+    polkit
+
+    (runCommand "install-bitwarden-policy" { } ''
+      mkdir -p $out/share/polkit-1/actions
+      cat <<EOF > $out/share/polkit-1/actions/com.bitwarden.Bitwarden.policy
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE policyconfig PUBLIC "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+      "http://www.freedesktop.org/standards/PolicyKit/1.0/policyconfig.dtd">
+      <policyconfig>
+        <action id="com.bitwarden.Bitwarden.unlock">
+          <description>Unlock Bitwarden</description>
+          <message>Authenticate to unlock Bitwarden</message>
+          <defaults>
+            <allow_any>no</allow_any>
+            <allow_inactive>no</allow_inactive>
+            <allow_active>auth_self</allow_active>
+          </defaults>
+        </action>
+      </policyconfig>
+      EOF
+    '')
   ];
-
-  # Enables the 1Password CLI
-  programs._1password = {
-    enable = true;
-  };
-
-  # Enables the 1Password desktop app
-  programs._1password-gui = {
-    enable = true;
-    # this makes system auth etc. work properly
-    polkitPolicyOwners = [ "ju" ];
-  };
 }

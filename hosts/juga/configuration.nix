@@ -18,6 +18,7 @@
     enable = true;
     package = lib.mkForce pkgs.gnome.gvfs;
   };
+
   services.udisks2.enable = true;
 
   time.timeZone = "Europe/Berlin";
@@ -53,7 +54,7 @@
   };
 
   security.pam.services.hyprlock = { };
-
+  security.pam.services.hyprland.enableGnomeKeyring = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users."ju" = {
     isNormalUser = true;
@@ -83,6 +84,7 @@
   programs.hyprland.enable = true;
   programs.hyprland.withUWSM = true;
 
+  security.polkit.enable = true;
   nixpkgs.config.allowUnfree = true;
 
   system.stateVersion = "26.05";

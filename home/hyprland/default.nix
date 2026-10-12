@@ -1,10 +1,11 @@
-{pkgs,inputs,...}:
+{ pkgs, inputs, ... }:
 
 {
+  home.packages = [ pkgs.gcr_3 ];
 
-  xdg.configFile."hypr"={
-      source = ./hypr;
-      recursive = true;
-    };
+  services.gnome-keyring.enable = true;
+  xdg.configFile."hypr" = {
+    source = ./hypr;
+    recursive = true;
+  };
 }
-

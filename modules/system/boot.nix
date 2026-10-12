@@ -13,7 +13,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Freeze fix
-  boot.kernelParams = [ "iommu=pt" ];
+  # boot.kernelParams = [ "iommu=pt" ];
 
   boot.loader.grub = {
     enable = true;

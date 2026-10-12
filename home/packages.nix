@@ -19,7 +19,6 @@
 
       nwg-look
 
-      mailspring
       thunderbird
       nautilus
 

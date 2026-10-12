@@ -3,13 +3,16 @@
 {
   imports = [
     ./packages.nix
+    ./bitwarden.nix
     ./screenshots.nix
     ./programm-languages.nix
-    ./terminal/cli-config.nix
     ./qt/qt.nix
+
+    ./terminal/cli-config.nix
     ./nvim/nvim.nix
     ./hyprland/default.nix
     ./quickshell/quickshell.nix
+    ./mailspring/mailspring.nix
   ];
 
   home.username = "ju";
