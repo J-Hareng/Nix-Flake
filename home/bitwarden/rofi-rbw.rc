@@ -1,0 +1,5 @@
+no-help
+
+selector-args="-config ~/.config/rofi/rbw.rasi -mesg 'Ctrl+u: User | Ctrl+p: Pass | Ctrl+t: TOTP'"
+
+keybindings="Ctrl+p:copy:password,Ctrl+u:copy:username,Ctrl+t:copy:totp"

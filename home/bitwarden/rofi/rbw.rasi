@@ -1,0 +1,10 @@
+@import "ariadne.rasi"
+@theme "ariadne"
+configuration {
+    kb-remove-to-eol: "";
+    kb-remove-to-sol: "";
+    kb-accept-entry: "Control+m,Return,KP_Enter";
+
+    kb-row-up: "Up,Control+k";
+    kb-row-down: "Down,Control+j";
+}

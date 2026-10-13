@@ -1,17 +1,14 @@
--- Ignore maximize requests from apps
+-- ============================================================
+-- 1. GLOBAL / CATCH‑ALL RULES
+-- ============================================================
 hl.window_rule({
 	match = { class = ".*" },
 	suppress_event = "maximize",
 })
 
--- Fix some dragging issues with XWayland
 hl.window_rule({
 	match = { class = "com.mitchellh.ghostty" },
 	opacity = 0.8,
-})
-hl.window_rule({
-	match = { fullscreen = true },
-	opacity = 1,
 })
 
 hl.window_rule({
@@ -27,7 +24,9 @@ hl.window_rule({
 	},
 })
 
--- satty
+-- ============================================================
+-- 2. APPLICATION‑SPECIFIC FLOATING & SIZING
+-- ============================================================
 hl.window_rule({
 	match = { class = "com.gabm.satty" },
 	float = true,
@@ -59,7 +58,6 @@ hl.window_rule({
 	move = "monitor_w-805 34",
 })
 
--- gcolor3
 hl.window_rule({
 	name = "color",
 	float = true,
@@ -67,14 +65,35 @@ hl.window_rule({
 	size = { 800, 330 },
 })
 
--- Workspace assignments
+hl.window_rule({
+	name = "quickshell-wifi-popup",
+	match = { class = "quickshell.wifipopup" },
+	float = true,
+	size = "750 550",
+	move = "monitor_w-760 34",
+	opacity = 0.8,
+	rounding = 12,
+})
+
+hl.window_rule({
+	name = "xwayland-video-bridge-fixes",
+	match = { class = "xwaylandvideobridge" },
+	no_initial_focus = true,
+	no_focus = true,
+	no_anim = true,
+	no_blur = true,
+	opacity = 0.0,
+})
+
+-- ============================================================
+-- 3. WORKSPACE ASSIGNMENTS
+-- ============================================================
 local workspace_rules = {
-	-- { class = "org.gnome.Nautilus", workspace = 1 },
 	{ class = "discord", workspace = 5 },
 	{ class = "vesktop", workspace = 5 },
 	{ class = "Slack", workspace = 5 },
 	{ class = "firefox", workspace = 3, opacity = 1.0 },
-	{ class = "zen", workspace = 3, opacity = 1.0 },
+	-- { class = "zen", workspace = 3, opacity = 1.0 }, -- Disabled to prevent conflict
 	{ class = "steam", workspace = 6 },
 	{ class = "spotify", workspace = 9 },
 	{ class = "youtubeMusic", workspace = 9 },
@@ -88,7 +107,9 @@ for _, r in ipairs(workspace_rules) do
 	})
 end
 
--- wvkbd (on-screen keyboard)
+-- ============================================================
+-- 4. BAR / PANEL / ON‑SCREEN KEYBOARD
+-- ============================================================
 hl.window_rule({
 	match = { class = "wvkbd" },
 	no_focus = true,
@@ -100,7 +121,6 @@ hl.window_rule({
 	move = { 0, "60%" },
 })
 
--- nwg-drawer
 hl.window_rule({
 	match = { title = "nwg-drawer" },
 	stay_focused = true,
@@ -109,36 +129,51 @@ hl.window_rule({
 	monitor = "eDP-1",
 })
 
-hl.window_rule({
-	match = {
-		class = "zen",
-	},
-	opacity = 1,
-})
+-- ============================================================
+-- 5. DYNAMIC EVENT LISTENERS
+-- ============================================================
+-- Float the Bitwarden browser extension when its title changes.
+hl.on("window.open", function(w)
+	-- Only care about Zen Browser windows
+	if w.class ~= "zen" then
+		return
+	end
+	-- The main browser window has initial_title "Zen Browser"
+	if w.initial_title ~= "Zen Browser" then
+		return
+	end
 
-hl.window_rule({
-	name = "quickshell-wifi-popup",
-	match = { class = "quickshell.wifipopup" },
-	float = true,
-	size = "750 550",
-	move = "monitor_w-760 34",
+	-- Check if there is already another Zen window open.
+	-- If there is, this new one is likely the extension popup.
+	local zen_windows = hl.get_windows({ class = "zen" })
+	if #zen_windows <= 1 then
+		return
+	end
 
-	opacity = 0.8,
-	rounding = 12,
-})
+	-- Float the popup immediately as it opens.
+	-- This is the key step that the static rule was missing.
+	hl.dispatch(hl.dsp.window.float({ action = "set", window = w }))
+	hl.dispatch(hl.dsp.window.center({ window = w }))
 
-hl.window_rule({
-	name = "xwayland-video-bridge-fixes",
-	match = {
-		class = "xwaylandvideobridge",
-	},
-	no_initial_focus = true,
-	no_focus = true,
-	no_anim = true,
-	no_blur = true,
-	opacity = 0.0,
-})
--- hl.layer_rule({
---     match = { namespace = "quickshell:volume-osd" },
---     no_anim = true,
--- })
+	-- Now, listen for the title change to refine its appearance
+	local sub
+	sub = hl.on("window.title", function(tw)
+		-- Ensure we are only acting on the window we opened
+		if tw.address ~= w.address then
+			return
+		end
+
+		-- Wait for the final title
+		if not tw.title:match("Bitwarden Password Manager") then
+			return
+		end
+
+		-- Stop listening once we have a match
+		sub:remove()
+
+		-- Apply the final size and re-center
+		hl.dispatch(hl.dsp.window.resize({ x = 500, y = 700, window = tw }))
+		hl.dispatch(hl.dsp.window.center({ window = tw }))
+		hl.dispatch(hl.dsp.focus({ window = tw }))
+	end)
+end)

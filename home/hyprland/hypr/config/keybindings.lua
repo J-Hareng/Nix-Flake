@@ -18,7 +18,7 @@ hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + ALT + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + I", hl.dsp.exec_cmd(browser))
 
-hl.bind(mainMod .. " + SHIFT + SPACE", hl.dsp.exec_cmd("rofi-rbw --selector wofi"))
+hl.bind(mainMod .. " + SHIFT + SPACE", hl.dsp.exec_cmd("rofi-rbw"))
 
 -- ── Focus movement ───────────────────────────────────────────
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "l" }))

@@ -20,6 +20,7 @@
       nwg-look
 
       thunderbird
+
       nautilus
 
       steam
@@ -28,9 +29,6 @@
       slack
 
       vscode
-
-      rofi
-
       gimp
 
       firefox
