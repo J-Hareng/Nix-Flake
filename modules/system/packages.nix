@@ -34,10 +34,10 @@
       rust-analyzer
 
       gcc
-
       bluez
       bluetui
 
+      dig
       # tidal
 
       lxqt.lxqt-policykit

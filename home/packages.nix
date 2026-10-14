@@ -17,10 +17,14 @@
       awww
       procps
 
+      man
+      mandoc
+      man-db
+
       nwg-look
 
       thunderbird
-
+      obsidian
       nautilus
 
       steam
