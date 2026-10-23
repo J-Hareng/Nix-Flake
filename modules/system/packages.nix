@@ -19,6 +19,7 @@
       wl-clipboard
 
       kitty
+    gimp
 
       libnotify
 
@@ -36,6 +37,11 @@
       gcc
       bluez
       bluetui
+
+      man
+      mandoc
+      man-db
+      gnumake
 
       dig
       # tidal

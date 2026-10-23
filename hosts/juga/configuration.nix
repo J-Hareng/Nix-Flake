@@ -37,6 +37,8 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "ju" ];
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "de";
@@ -62,6 +64,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "vboxuser"
     ];
     shell = pkgs.fish;
   };

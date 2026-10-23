@@ -17,10 +17,6 @@
       awww
       procps
 
-      man
-      mandoc
-      man-db
-
       nwg-look
 
       thunderbird
@@ -48,6 +44,9 @@
       xournalpp
       material-symbols
 
+      gcolor3
+      gnome-calculator
+
       beeper
       beeper-bridge-manager
 
@@ -55,6 +54,17 @@
       chess-tui
       cbonsai
       wiremix
+    
+
+      jetbrains.datagrip
+      # dbeaver-bin
+
+      virtualbox
+      cdrkit
+
+      postgresql # provides `psql`, required by vim-dadbod
+      sqlfluff # SQL formatter/linter (used by conform.nvim)
+      pgcli # optional: nice autocompleting Postgres CLI
     ]
     ++ [
       inputs.hyprmod.packages.${pkgs.stdenv.hostPlatform.system}.default

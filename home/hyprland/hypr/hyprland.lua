@@ -10,7 +10,6 @@ require("config.keybindings")
 require("config.options")
 require("config.roules")
 require("config.animations")
+
 require("~/.config/hyprmod/hyprland-gui.lua")
 require("config.monitors")
-
--- HyprMod managed settings
