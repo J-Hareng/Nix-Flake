@@ -4,9 +4,6 @@
   ...
 }:
 {
-
-  # environment.systemPackages = [ pkgs.sddm ];
-
   services.displayManager.defaultSession = "hyprland";
 
   boot.loader.systemd-boot.enable = false;
@@ -28,6 +25,7 @@
     '';
   };
 
+  #boot.kernelPackages = pkgs.linuxPackages;
   boot.kernelPackages = pkgs.linuxPackages_latest;
   # boot.kernelParams = [ "amdgpu.abmlevel=0" ];
   boot.initrd.kernelModules = [ "amdgpu" ];

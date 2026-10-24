@@ -12,6 +12,7 @@ hl.monitor({
 	transform = 1,
 	cm = "srgb",
 })
+
 hl.monitor({
 	output = "desc:Acer Technologies RX321QU 5135001013900",
 	disabled = false,
@@ -30,8 +31,8 @@ hl.monitor({
 hl.monitor({
 	output = "eDP-1",
 	disabled = false,
-	mode = "2880x1800@120.00Hz",
-	position = "4260x930",
+	-- mode = "2880x1800@120.00Hz",
+	-- position = "4260x930",
 	scale = 1.8,
 	bitdepth = 8,
 	cm = "srgb",

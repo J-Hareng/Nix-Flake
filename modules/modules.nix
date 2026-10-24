@@ -8,7 +8,6 @@
 
     # System programs
     # ./system/ai.nix
-    ./system/hyprland.nix
     ./system/sddm.nix
     ./system/password_manager.nix
 
@@ -25,6 +24,14 @@
     ./system/fonts.nix
 
     ./system/samba.nix
+    
+    ./system/desktop.nix
+    ./system/dev.nix
+    ./system/local.nix
+    ./system/nix.nix
+    ./system/users.nix
+    ./system/virtualisation.nix
+
   ];
 
 }

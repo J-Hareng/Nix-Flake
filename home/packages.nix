@@ -13,58 +13,55 @@
       slurp
       satty
 
-      waypaper
-      awww
-      procps
-
-      nwg-look
-
-      thunderbird
-      obsidian
-      nautilus
-
-      steam
-      vesktop
-      discord
-      slack
-
-      vscode
-      gimp
-
-      firefox
-      speedtest-cli
-      libreoffice
-
-      fastfetch
-      brightnessctl
-      lsd
-
-      element-desktop
-
-      xournalpp
-      material-symbols
-
       gcolor3
       gnome-calculator
 
+
+      #Apps
+      #----HKA
+      slack
+      vscode
+      element-desktop
+      jetbrains.datagrip
+      # postgresql # provides `psql`, required by vim-dadbod
+      # sqlfluff # SQL formatter/linter (used by conform.nvim)
+      # pgcli # optional: nice autocompleting Postgres CLI
+      obsidian
+      xournalpp
+
+
+      #----privat
+      #---------Unreplacable
+      nautilus
+      thunderbird
+      gimp
+      firefox
+      libreoffice
+
+      material-symbols
+      
+      steam
+
+      vesktop
+      discord
       beeper
       beeper-bridge-manager
+
+      speedtest-cli
+
+      lsd
+      fastfetch
+      brightnessctl
+      waypaper
+      awww
+
+      procps
+      nwg-look
 
       # TUI goofing around
       chess-tui
       cbonsai
       wiremix
-    
-
-      jetbrains.datagrip
-      # dbeaver-bin
-
-      virtualbox
-      cdrkit
-
-      postgresql # provides `psql`, required by vim-dadbod
-      sqlfluff # SQL formatter/linter (used by conform.nvim)
-      pgcli # optional: nice autocompleting Postgres CLI
     ]
     ++ [
       inputs.hyprmod.packages.${pkgs.stdenv.hostPlatform.system}.default
