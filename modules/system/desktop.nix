@@ -1,11 +1,11 @@
 { lib, pkgs, ... }:
 let
   sddm-theme = pkgs.sddm-astronaut.override {
-    embeddedTheme = "astronaut";  # closest visual match to Sugar Candy; try "black_hole" or "cyberpunk" too
+    embeddedTheme = "astronaut";
     themeConfig = {
-      ScreenWidth="2880";
-      ScreenHeight="1800";
-      Background="${../../hosts/juga/sddm_wallpaper.jpg}";
+      ScreenWidth = "2880";
+      ScreenHeight = "1800";
+      Background = "${../../hosts/juga/sddm_wallpaper.jpg}";
       BackgroundColor = "#040e0d";
       FormBackgroundColor = "#0f211f";
       HeaderTextColor = "#f5e2c5";
@@ -19,23 +19,24 @@ let
       FormPosition = "right";
     };
   };
-in {
-  environment.systemPackages = [ sddm-theme ];
+in
+{
+  environment.systemPackages = with pkgs; [
+    sddm-theme
+    hyprland
+    hyprlock
+    kitty
+  ];
+
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
     theme = "${sddm-theme}/share/sddm/themes/sddm-astronaut-theme";
     extraPackages = [ sddm-theme ];
   };
-  
-  environment.systemPackages = with pkgs; [
-      hyprland
-      hyprlock
-      kitty
-  ];
 
   programs.hyprland = {
-    enable = true; 
+    enable = true;
     withUWSM = true;
   };
 
