@@ -18,23 +18,11 @@
 
       wl-clipboard
 
-      kitty
-    gimp
+      gimp
 
       libnotify
+      
 
-      python3
-
-      jdk21
-      android-studio-tools
-      # rustup
-      cargo
-      rustc
-      rustfmt
-      clippy
-      rust-analyzer
-
-      gcc
       bluez
       bluetui
 
@@ -44,15 +32,14 @@
       gnumake
 
       dig
-      # tidal
 
       lxqt.lxqt-policykit
 
       tela-icon-theme
       papirus-icon-theme
-      sshfs
+
       trayscale
-      nh
+      sshfs
     ]
     ++ [
       inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default

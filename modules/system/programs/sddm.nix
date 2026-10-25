@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
   let
     sddm-theme = pkgs.sddm-astronaut.override {
       embeddedTheme = "astronaut";  # closest visual match to Sugar Candy; try "black_hole" or "cyberpunk" too
@@ -20,9 +19,8 @@
         FormPosition = "right";
       };
     };
-  in
+    in
   {
-
     environment.systemPackages = [ sddm-theme ];
 
     services.displayManager.sddm = {

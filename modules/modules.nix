@@ -2,33 +2,27 @@
 {
 
   imports = [
-    # programs
     ./themp-packages.nix
-    ./system/packages.nix
 
-    # System programs
-    # ./system/ai.nix
-    ./system/sddm.nix
-    ./system/password_manager.nix
+    # programs
+    ./system/programs/ai.nix
+    ./system/programs/password_manager.nix
+    ./system/programs/packages.nix
+    ./system/programs/samba.nix
 
     # Hardware Thingis
     ./hardware/magic-mouse.nix
 
-    # System
-    ./system/boot.nix
-
     ./system/networking/networking.nix
+    # System
     ./system/bluetooth.nix
-    ./system/powermanagement.nix
-
-    ./system/fonts.nix
-
-    ./system/samba.nix
-    
-    ./system/desktop.nix
+    ./system/boot.nix
     ./system/dev.nix
+    ./system/desktop.nix
+    ./system/fonts.nix
     ./system/local.nix
     ./system/nix.nix
+    ./system/powermanagement.nix
     ./system/users.nix
     ./system/virtualisation.nix
 
