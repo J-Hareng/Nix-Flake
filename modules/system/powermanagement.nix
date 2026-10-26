@@ -18,6 +18,12 @@
       CPU_MAX_PERF_ON_AC = 100;
       CPU_MIN_PERF_ON_BAT = 0;
       CPU_MAX_PERF_ON_BAT = 20;
+
+      WIFI_PWR_ON_AC = "off";
+      WIFI_PWR_ON_BAT = "off";
+
+      RADEON_DPM_PERF_LEVEL_ON_AC = "auto";
+      RADEON_DPM_PERF_LEVEL_ON_BAT = "auto";
     };
   };
   services.tlp.pd.enable = true;

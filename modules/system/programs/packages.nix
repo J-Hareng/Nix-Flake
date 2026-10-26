@@ -21,7 +21,6 @@
       gimp
 
       libnotify
-      
 
       bluez
       bluetui

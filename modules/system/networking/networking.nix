@@ -6,7 +6,7 @@
     enable = true;
     settings = {
       DriverQuirks = {
-        PowerSaveDisable = "";
+        PowerSaveDisable = "*";
       };
       General = {
         EnableNetworkConfiguration = true; # iwd does DHCP itself
