@@ -24,6 +24,8 @@ in
   environment.systemPackages = with pkgs; [
     sddm-theme
     hyprland
+
+    kdePackages.xwaylandvideobridge
     hyprlock
     kitty
   ];
