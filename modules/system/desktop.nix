@@ -25,7 +25,6 @@ in
     sddm-theme
     hyprland
 
-    kdePackages.xwaylandvideobridge
     hyprlock
     kitty
   ];

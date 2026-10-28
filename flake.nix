@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-# nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,6 +19,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
 
     };
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # boltwarden.url = "github:vleeuwenmenno/boltwarden";
 
     nixos-grub-themes.url = "github:jeslie0/nixos-grub-themes";
@@ -30,6 +35,7 @@
       nixpkgs,
       home-manager,
       zen-browser,
+      sops-nix,
       ...
     }@inputs:
     {
@@ -41,6 +47,7 @@
 
           ./modules/modules.nix
 
+          sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

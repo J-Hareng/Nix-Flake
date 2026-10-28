@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
+let
+  home = "/home/ju";
+in
 {
   # for Mason.nvim
   programs.nix-ld.enable = true;
@@ -21,9 +24,19 @@
 
     gcc
 
+    sops
+
     python3
     jdk21
   ];
 
   environment.variables.EDITOR = "nvim";
+
+  sops = {
+    # defaultSopsFile = ../../secrets/secrets.yaml;
+    defaultSopsFormat = "yaml";
+
+    age.keyFile = "${home}/.config/sops/age/keys.txt";
+  };
+
 }
