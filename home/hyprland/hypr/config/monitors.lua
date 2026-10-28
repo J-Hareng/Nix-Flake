@@ -16,7 +16,7 @@ hl.monitor({
 hl.monitor({
 	output = "desc:Acer Technologies RX321QU 5135001013900",
 	disabled = false,
-	mode = "2560x1440@144.00Hz",
+	mode = "2560x1440@60.00Hz",
 	position = "1680x660",
 	scale = 1,
 	bitdepth = 10,
