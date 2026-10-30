@@ -26,6 +26,8 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.go" }, -- Go
     { import = "lazyvim.plugins.extras.lang.rust" }, -- Rust
     { import = "lazyvim.plugins.extras.lang.java" }, -- Java
+    { import = "lazyvim.plugins.extras.lang.vue" }, -- add this (pulls in the typescript extra too)
+
     -- import/override with your plugins
     { import = "plugins" },
   },
