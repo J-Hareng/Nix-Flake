@@ -6,6 +6,9 @@
 #   /home/ju/.config/ghostty/config
 
 theme = ariadne
+background-opacity = 0.7
+background-blur = true
+
 # theme = TokyoNight Moon
 #theme = Darkside
 # The template does not set any default options, since Ghostty ships
