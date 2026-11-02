@@ -28,6 +28,8 @@ in
 
     python3
     jdk21
+
+    openssl
   ];
 
   environment.variables.EDITOR = "nvim";

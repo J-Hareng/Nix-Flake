@@ -91,6 +91,8 @@ hl.unbind("SUPER + S")
 hl.unbind("SUPER + SHIFT + S")
 hl.unbind("SUPER + P")
 
+hl.unbind("CTRL + RETURN")
+
 hl.bind(
 	"SUPER + SHIFT + S",
 	hl.dsp.exec_cmd([[

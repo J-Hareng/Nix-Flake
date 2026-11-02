@@ -1,4 +1,9 @@
-{ lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   sddm-theme = pkgs.sddm-astronaut.override {
     embeddedTheme = "astronaut";
@@ -19,8 +24,23 @@ let
       FormPosition = "right";
     };
   };
+
+  # newerNixpkgs = builtins.fetchTarball {
+  #   url = "https://github.com/NixOS/nixpkgs/archive/1e692926b61281473b47837a6eefea805f62c352.tar.gz";
+  # };
+  #
+  # newerPkgs = import newerNixpkgs {
+  #   inherit (config.nixpkgs) config;
+  # };
 in
 {
+  # nixpkgs.overlays = [
+  #   (final: prev: {
+  #     python314Packages = prev.python314Packages // {
+  #       fastmcp-slim = newerPkgs.python314Packages.fastmcp-slim;
+  #     };
+  #   })
+  # ];
   environment.systemPackages = with pkgs; [
     sddm-theme
     hyprland

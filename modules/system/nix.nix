@@ -1,14 +1,17 @@
-{pkgs,...}:
+{ pkgs, ... }:
 {
 
   nix.settings.experimental-features = [
     "nix-command"
-      "flakes"
+    "flakes"
   ];
 
-  nixpkgs.config.allowUnfree = true;
-
-
+  nixpkgs.config = {
+    allowUnfree = true;
+    problems.handlers = {
+      fastmcp-slim.broken = "warn";
+    };
+  };
   environment.systemPackages = with pkgs; [
     nh
   ];

@@ -3,6 +3,10 @@
   environment.systemPackages = [
     pkgs.llama-cpp
     pkgs.ollama
+
+    pkgs.tenere
+    (pkgs.callPackage ./cargo/lazyllama.nix { })
+    # pkgs.oterm
   ];
 
   services.ollama = {
@@ -14,7 +18,6 @@
       OLLAMA_KEEP_ALIVE = "30m";
     };
   };
-
   # services.open-webui = {
   #   enable = true;
   #   environment = {

@@ -1,4 +1,4 @@
-{pkgs, ... }:
+{ pkgs, ... }:
 
 {
   users.users."ju" = {
@@ -10,6 +10,8 @@
       "vboxuser"
     ];
     shell = pkgs.fish;
+
   };
   programs.fish.enable = true;
+
 }

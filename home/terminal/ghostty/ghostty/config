@@ -9,6 +9,7 @@ theme = ariadne
 background-opacity = 0.7
 background-blur = true
 
+keybind = ctrl+enter=unbind
 # theme = TokyoNight Moon
 #theme = Darkside
 # The template does not set any default options, since Ghostty ships
