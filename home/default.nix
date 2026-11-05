@@ -3,6 +3,8 @@
 {
   imports = [
     ./packages.nix
+    ./stable-packages.nix
+
     ./screenshots.nix
     ./programm-languages.nix
 
@@ -18,6 +20,7 @@
     ./hyprland/default.nix
 
     ./quickshell/quickshell.nix
+    ./oterm/oterm.nix
   ];
 
   home.username = "ju";

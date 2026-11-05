@@ -34,7 +34,7 @@ hl.monitor({
 	-- mode = "2880x1800@120.00Hz",
 	-- position = "4260x930",
 	scale = 1.8,
-	bitdepth = 8,
+	bitdepth = 10,
 	cm = "srgb",
 	-- sdrbrightness = 0.5,
 	-- sdr_min_luminance = 0,

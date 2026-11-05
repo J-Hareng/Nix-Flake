@@ -16,7 +16,6 @@
       gcolor3
       gnome-calculator
 
-
       #Apps
       #----HKA
       slack
@@ -28,7 +27,7 @@
       # pgcli # optional: nice autocompleting Postgres CLI
       obsidian
       xournalpp
-
+      bruno
 
       #----privat
       #---------Unreplacable
@@ -39,13 +38,15 @@
       libreoffice
 
       material-symbols
-      
+
       steam
 
       vesktop
       discord
       beeper
       beeper-bridge-manager
+
+      keypunch
 
       speedtest-cli
 
@@ -62,6 +63,8 @@
       chess-tui
       cbonsai
       wiremix
+
+      tidal-hifi
     ]
     ++ [
       inputs.hyprmod.packages.${pkgs.stdenv.hostPlatform.system}.default

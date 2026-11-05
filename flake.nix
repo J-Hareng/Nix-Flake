@@ -4,28 +4,24 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     hyprmod = {
       url = "github:BlueManCZ/hyprmod";
       inputs.nixpkgs.follows = "nixpkgs";
-
     };
-
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # boltwarden.url = "github:vleeuwenmenno/boltwarden";
-
     nixos-grub-themes.url = "github:jeslie0/nixos-grub-themes";
   };
 
@@ -36,12 +32,25 @@
       home-manager,
       zen-browser,
       sops-nix,
+      nixpkgs-stable,
       ...
     }@inputs:
+    let
+      system = "x86_64-linux";
+
+    in
     {
       nixosConfigurations.juga = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
+        specialArgs = {
+          inherit inputs;
+
+          pkgs-stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
+
         modules = [
           ./hosts/juga/configuration.nix
 
@@ -60,10 +69,18 @@
 
       homeConfigurations."ju" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
-          system = "x86_64-linux";
+          system = system;
           config.allowUnfree = true;
         };
-        extraSpecialArgs = { inherit inputs; };
+
+        extraSpecialArgs = {
+          inherit inputs;
+
+          pkgs-stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
         modules = [ ./home/default.nix ];
       };
     };

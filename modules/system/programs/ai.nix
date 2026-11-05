@@ -1,12 +1,16 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-stable, ... }:
 {
   environment.systemPackages = [
     pkgs.llama-cpp
     pkgs.ollama
-
-    pkgs.tenere
-    (pkgs.callPackage ./cargo/lazyllama.nix { })
+    # pkgs.jan
+    # pkgs.tenere
+    # (pkgs.callPackage ./cargo/lazyllama.nix { })
     # pkgs.oterm
+
+    pkgs-stable.oterm
+
+    pkgs.uv
   ];
 
   services.ollama = {
