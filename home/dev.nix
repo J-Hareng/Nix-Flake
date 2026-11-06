@@ -1,7 +1,7 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
-  
+
     nodejs_26
 
     luarocks
@@ -10,6 +10,5 @@
 
     go
 
-    sunsetr
   ];
 }

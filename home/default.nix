@@ -2,25 +2,9 @@
 
 {
   imports = [
-    ./packages.nix
-    ./stable-packages.nix
-
-    ./screenshots.nix
-    ./programm-languages.nix
-
-    ./qt/qt.nix
-
-    ./bitwarden/bitwarden.nix
-    ./bitwarden/rbw.nix
-
-    ./terminal/cli-config.nix
-
-    ./nvim/nvim.nix
-
-    ./hyprland/default.nix
-
-    ./quickshell/quickshell.nix
-    ./oterm/oterm.nix
+    ./ju
+    ./system-conf
+    ./dev.nix
   ];
 
   home.username = "ju";

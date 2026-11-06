@@ -1,6 +1,11 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ./bitwarden.nix
+    # ./rofi-rbw.rc
+  ];
+
   home.packages = with pkgs; [
     rbw
     rofi
