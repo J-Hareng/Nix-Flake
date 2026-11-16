@@ -7,6 +7,9 @@
 
     lua5_1
 
+    go gopls gofumpt gotools delve gomodifytags impl
+
+
     clang
     fzf
     ripgrep

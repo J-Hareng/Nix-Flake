@@ -10,6 +10,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,6 +23,9 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-software-center.url = "github:snowfallorg/nix-software-center";
+
     nixos-grub-themes.url = "github:jeslie0/nixos-grub-themes";
   };
 
@@ -31,7 +35,8 @@
       nixpkgs,
       home-manager,
       zen-browser,
-      sops-nix,
+     sops-nix,
+     nix-software-center,
       nixpkgs-stable,
       ...
     }@inputs:

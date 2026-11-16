@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
 
   nix.settings.experimental-features = [
@@ -14,6 +14,9 @@
   };
   environment.systemPackages = with pkgs; [
     nh
+  ] ++ [
+
+      inputs.nix-software-center.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
   programs.nh = {
     enable = true;

@@ -60,6 +60,7 @@ in
     enable = true;
     withUWSM = true;
   };
+  
 
   security.polkit.enable = true;
 

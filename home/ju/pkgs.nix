@@ -8,10 +8,12 @@
     vscode
     element-desktop
     jetbrains.datagrip
+    jetbrains.clion
 
     wireshark
     obsidian
     xournalpp
+    cdrkit
 
     # -- Tools
     bruno

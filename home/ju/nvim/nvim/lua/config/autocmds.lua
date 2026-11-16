@@ -19,12 +19,11 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-
   pattern = { "qml", "qmljs" },
   callback = function()
     vim.lsp.enable("qmlls")
   end,
-
 })
+
 -- Apply immediately
 vim.api.nvim_set_hl(0, "Cursor", { fg = "#1a1b26", bg = "#c0caf5" })

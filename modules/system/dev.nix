@@ -21,8 +21,12 @@ in
     rustfmt
     clippy
     rust-analyzer
+    
+    #Go
+    
 
     gcc
+    clang-tools
 
     sops
 
